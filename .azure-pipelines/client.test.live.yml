@@ -3,12 +3,6 @@ jobs:
 
     strategy:
       matrix:
-        AzureBatch:
-          pomFilePath: './batch/data-plane/pom.xml'
-        AzureKeyVault:
-          pomFilePath: './keyvault/data-plane/pom.xml'
-        AzureEventHubs:
-          pomFilePath: './eventhubs/data-plane/pom.xml'
         AzureStorage:
           pomFilePath: './storage/data-plane/pom.xml'
 
@@ -46,6 +40,7 @@ jobs:
           PREMIUM_STORAGE_ACCOUNT_KEY: $(java-storage-test-premium-account-key)
           BLOB_STORAGE_ACCOUNT_NAME: $(java-storage-test-blob-account-name)
           BLOB_STORAGE_ACCOUNT_KEY: $(java-storage-test-blob-account-key)
+          MICROSOFT_AD_TENANT_ID: $(microsoft-active-directory-tenant-id)
 
       - task: PublishTestResults@2
         condition: succeededOrFailed()
