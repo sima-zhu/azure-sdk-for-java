@@ -23,24 +23,17 @@ jobs:
           publishJUnitResults: false
           goals: 'test'
         env:
-          ARM_CLIENTID: $(java-keyvault-test-arm-client-id)
-          ARM_CLIENTKEY: $(java-keyvault-test-arm-client-key)
-          AZURE_TEST_MODE: RECORD
-          AZURE_BATCH_ACCOUNT: $(java-batch-test-account-name)
-          AZURE_BATCH_ACCESS_KEY: $(java-batch-test-account-access-key)
-          STORAGE_ACCOUNT_KEY: $(java-batch-test-storage-account-key)
-          STORAGE_ACCOUNT_NAME: $(java-batch-test-storage-account-name)
-          AZURE_BATCH_ENDPOINT: https://servbatch.centralus.batch.azure.com
-          AZURE_EVENTHUBS_CONNECTION_STRING: ${java-event-hubs-test-connection-string}
-          PRIMARY_STORAGE_ACCOUNT_NAME: $(java-storage-test-primary-account-name)
-          PRIMARY_STORAGE_ACCOUNT_KEY: $(java-storage-test-primary-account-key)
-          SECONDARY_STORAGE_ACCOUNT_NAME: $(java-storage-test-secondary-account-name)
-          SECONDARY_STORAGE_ACCOUNT_KEY: $(java-storage-test-secondary-account-key)
-          PREMIUM_STORAGE_ACCOUNT_NAME: $(java-storage-test-premium-account-name)
-          PREMIUM_STORAGE_ACCOUNT_KEY: $(java-storage-test-premium-account-key)
-          BLOB_STORAGE_ACCOUNT_NAME: $(java-storage-test-blob-account-name)
-          BLOB_STORAGE_ACCOUNT_KEY: $(java-storage-test-blob-account-key)
-          MICROSOFT_AD_TENANT_ID: $(microsoft-active-directory-tenant-id)
+          ARM_CLIENTID: $(ARM_CLIENTID)
+          ARM_CLIENTKEY: $(ARM_CLIENTKEY)
+          PRIMARY_STORAGE_ACCOUNT_NAME: $(PRIMARY_STORAGE_ACCOUNT_NAME)
+          PRIMARY_STORAGE_ACCOUNT_KEY: $(PRIMARY_STORAGE_ACCOUNT_KEY)
+          SECONDARY_STORAGE_ACCOUNT_NAME: $(SECONDARY_STORAGE_ACCOUNT_NAME)
+          SECONDARY_STORAGE_ACCOUNT_KEY: $(SECONDARY_STORAGE_ACCOUNT_KEY)
+          PREMIUM_STORAGE_ACCOUNT_NAME: $(PREMIUM_STORAGE_ACCOUNT_NAME)
+          PREMIUM_STORAGE_ACCOUNT_KEY: $(PREMIUM_STORAGE_ACCOUNT_KEY)
+          BLOB_STORAGE_ACCOUNT_NAME: $(BLOB_STORAGE_ACCOUNT_NAME)
+          BLOB_STORAGE_ACCOUNT_KEY: $(BLOB_STORAGE_ACCOUNT_KEY)
+          MICROSOFT_AD_TENANT_ID: $(MICROSOFT_AD_TENANT_ID)
 
       - task: PublishTestResults@2
         condition: succeededOrFailed()
